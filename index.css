@@ -31,6 +31,7 @@ header {
 
 main {
   padding: 1em 0;
+  position: relative;
 }
 
 h1,
@@ -133,9 +134,26 @@ p {
   height: 100px;
   border-radius: 50%;
   background-color: #fac826;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   display: flex;
   justify-content: center;
-  transition: all 200ms ease-in-out;
+  animation-name: circle;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes circle {
+  50% {
+    transform: scale(0.8);
+    background-color: #fa8526;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #fac826;
+  }
 }
 
 .text-circle p {
@@ -147,7 +165,6 @@ p {
 
 .text-circle:hover {
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 .text-hidden {
